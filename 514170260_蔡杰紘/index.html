@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福氣白貓｜我的幸運物</title>
+  <meta name="description" content="我的幸運物是家裡那隻胖胖的白色貓咪——牠帶來好運與陪伴，愛吃所以圓滾滾，看起來好有福氣。">
+  <meta name="author" content="514170260 蔡杰紘">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- 字型：霞鶩文楷（標題、引言）＋ 思源黑體（內文） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+
+  <!-- 捲動進度條 -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- 共用 SVG 素材（漸層、肉球、愛心） -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="furGrad" cx="42%" cy="34%" r="78%">
+        <stop offset="0" stop-color="#FFFFFF"/>
+        <stop offset=".58" stop-color="#FFFFFF"/>
+        <stop offset="1" stop-color="#EEE4D7"/>
+      </radialGradient>
+      <radialGradient id="bellGrad" cx="34%" cy="30%" r="72%">
+        <stop offset="0" stop-color="#FFE9A8"/>
+        <stop offset=".55" stop-color="#E2B24A"/>
+        <stop offset="1" stop-color="#B07F27"/>
+      </radialGradient>
+      <symbol id="paw" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="43" rx="14.5" ry="12.5"/>
+        <ellipse cx="13.5" cy="27" rx="6.2" ry="7.6" transform="rotate(-18 13.5 27)"/>
+        <ellipse cx="25" cy="16" rx="6.2" ry="7.8" transform="rotate(-6 25 16)"/>
+        <ellipse cx="39" cy="16" rx="6.2" ry="7.8" transform="rotate(6 39 16)"/>
+        <ellipse cx="50.5" cy="27" rx="6.2" ry="7.6" transform="rotate(18 50.5 27)"/>
+      </symbol>
+      <symbol id="heart" viewBox="0 0 32 32">
+        <path d="M16 28.5C6.4 21.4 2 15.6 2 10.3 2 6.2 5.1 3 9 3c2.9 0 5.4 1.7 7 4.3C17.6 4.7 20.1 3 23 3c3.9 0 7 3.2 7 7.3 0 5.3-4.4 11.1-14 18.2z"/>
+      </symbol>
+      <symbol id="sparkle" viewBox="0 0 32 32">
+        <path d="M16 1.5l3.2 11.3L30.5 16l-11.3 3.2L16 30.5l-3.2-11.3L1.5 16l11.3-3.2z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== 導覽列 ===================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="主選單">
+      <a class="brand" href="#top">
+        <span class="brand-seal" aria-hidden="true">福</span>
+        <span class="brand-name">福氣白貓</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#profile">認識牠</a></li>
+        <li><a href="#story">故事</a></li>
+        <li><a href="#meaning">象徵</a></li>
+        <li><a href="#feed">餵食</a></li>
+        <li><a href="#wish">心願</a></li>
+      </ul>
+      <div class="nav-luck" title="摸摸、餵食、擁抱都會累積福氣值">
+        <svg class="icon" aria-hidden="true"><use href="#sparkle"/></svg>
+        <span class="nav-luck-label">福氣值</span>
+        <strong id="luckCount" aria-live="polite">0</strong>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== 01 主視覺 ===================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="hero-watermark">福</span>
+        <svg class="sparkle s1"><use href="#sparkle"/></svg>
+        <svg class="sparkle s2"><use href="#sparkle"/></svg>
+        <svg class="sparkle s3"><use href="#sparkle"/></svg>
+        <svg class="sparkle s4"><use href="#sparkle"/></svg>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">My Lucky Charm · 我的幸運物</p>
+          <h1 class="hero-title" id="hero-title">福氣，是一隻<br><em>胖胖的白貓</em></h1>
+          <p class="hero-lead">我的幸運物不是護身符，也不是店裡買來的招財擺飾，而是住在我家的那隻白色貓咪。牠為家裡帶來好運與陪伴；牠愛吃，所以圓滾滾的——光是看著牠，就覺得好有福氣。</p>
+          <ul class="hero-tags" aria-label="關鍵字">
+            <li>家中的寵物</li>
+            <li>好運 × 陪伴</li>
+            <li>愛吃・有福氣</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#story">閱讀牠的故事</a>
+            <a class="btn btn-ghost" href="#feed">餵牠吃點心</a>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="halo" aria-hidden="true"></div>
+          <p class="speech" id="speech" role="status" aria-live="polite"></p>
+
+          <button class="cat-button cat-host" id="heroCat" type="button" aria-label="摸摸白色貓咪">
+            <!-- 白色貓咪插畫（整隻貓都用 SVG 向量繪製） -->
+            <svg class="cat" viewBox="0 0 420 400" aria-hidden="true" focusable="false">
+              <ellipse class="cat-shadow" cx="210" cy="380" rx="140" ry="13"/>
+
+              <g class="cat-tail">
+                <path class="tail-outline" d="M300 338C372 342 400 290 378 238"/>
+                <path class="tail-fill" d="M300 338C372 342 400 290 378 238"/>
+              </g>
+
+              <g class="cat-chub">
+                <g class="cat-breathe">
+                  <ellipse class="fur" cx="210" cy="290" rx="130" ry="90"/>
+                  <ellipse class="belly" cx="210" cy="306" rx="78" ry="56"/>
+                  <ellipse class="fur" cx="166" cy="364" rx="31" ry="17"/>
+                  <ellipse class="fur" cx="254" cy="364" rx="31" ry="17"/>
+                  <path class="toe" d="M158 358v9M174 358v9M246 358v9M262 358v9"/>
+                </g>
+              </g>
+
+              <g class="head-follow">
+                <g class="cat-head">
+                  <g class="ear ear-l">
+                    <path class="fur" d="M108 128Q104 50 128 36Q140 30 150 40L190 76Z"/>
+                    <path class="ear-inner" d="M122 108Q122 64 134 53Q140 49 146 55L172 80Z"/>
+                  </g>
+                  <g class="ear ear-r">
+                    <path class="fur" d="M312 128Q316 50 292 36Q280 30 270 40L230 76Z"/>
+                    <path class="ear-inner" d="M298 108Q298 64 286 53Q280 49 274 55L248 80Z"/>
+                  </g>
+
+                  <path class="fur" d="M210 62C282 62 322 102 326 150C332 205 290 240 210 240C130 240 88 205 94 150C98 102 138 62 210 62Z"/>
+
+                  <ellipse class="blush" cx="138" cy="188" rx="19" ry="10"/>
+                  <ellipse class="blush" cx="282" cy="188" rx="19" ry="10"/>
+
+                  <path class="whiskers" d="M128 176L76 167M128 188L74 193M292 176L344 167M292 188L346 193"/>
+
+                  <g transform="translate(166 152)">
+                    <g class="eye-track">
+                      <g class="eye-blink eye-open">
+                        <ellipse class="eye-ball" rx="14" ry="16"/>
+                        <circle class="eye-shine" cx="-4.5" cy="-6" r="5"/>
+                        <circle class="eye-shine" cx="5" cy="5.5" r="2.2"/>
+                      </g>
+                    </g>
+                    <path class="eye-happy" d="M-13 5Q0-12 13 5"/>
+                  </g>
+                  <g transform="translate(254 152)">
+                    <g class="eye-track">
+                      <g class="eye-blink eye-open">
+                        <ellipse class="eye-ball" rx="14" ry="16"/>
+                        <circle class="eye-shine" cx="-4.5" cy="-6" r="5"/>
+                        <circle class="eye-shine" cx="5" cy="5.5" r="2.2"/>
+                      </g>
+                    </g>
+                    <path class="eye-happy" d="M-13 5Q0-12 13 5"/>
+                  </g>
+
+                  <path class="nose" d="M201 175Q210 170 219 175Q215 183 210 185Q205 183 201 175Z"/>
+                  <ellipse class="mouth-open cat-mouth" cx="210" cy="199" rx="9" ry="8"/>
+                  <path class="mouth" d="M196 191Q203 199 210 191Q217 199 224 191"/>
+                </g>
+              </g>
+
+              <path class="collar" d="M140 229Q210 262 280 229"/>
+              <g class="cat-bell">
+                <circle cx="210" cy="262" r="14" fill="url(#bellGrad)"/>
+                <path class="bell-line" d="M198 260h24"/>
+                <circle class="bell-dot" cx="210" cy="268" r="2.6"/>
+              </g>
+            </svg>
+          </button>
+
+          <p class="stage-hint">
+            <svg class="icon" aria-hidden="true"><use href="#paw"/></svg>
+            滑鼠移過去，再點一下摸摸牠
+          </p>
+          <p class="pet-count">已經摸摸 <strong id="petCount">0</strong> 次</p>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#profile" aria-label="往下閱讀"><span></span></a>
+    </section>
+
+    <!-- ===================== 02 認識牠 ===================== -->
+    <section class="section profile" id="profile" aria-labelledby="profile-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-no">01</p>
+          <h2 id="profile-title">認識牠</h2>
+          <p>一張屬於我家白貓的「幸運物檔案」。</p>
+        </header>
+
+        <article class="profile-card reveal">
+          <figure class="polaroid cat-host">
+            <div class="portrait" id="portrait" aria-hidden="true"></div>
+            <figcaption>家裡的白色貓咪</figcaption>
+          </figure>
+
+          <div class="profile-body">
+            <p class="profile-kicker">Lucky Charm Profile · No.001</p>
+            <h3>幸運物檔案</h3>
+            <dl class="profile-list">
+              <div><dt>身分</dt><dd>我家的寵物・家人</dd></div>
+              <div><dt>毛色</dt><dd>一身雪白</dd></div>
+              <div><dt>體型</dt><dd>圓滾滾、胖嘟嘟</dd></div>
+              <div><dt>最愛</dt><dd>吃東西</dd></div>
+              <div><dt>天賦</dt><dd>帶來好運、陪伴家人</dd></div>
+              <div><dt>象徵</dt><dd>福氣</dd></div>
+            </dl>
+
+            <ul class="stats" aria-label="幸運物能力值">
+              <li class="stat"><span>好運力</span><span class="stat-bar"><span style="--v:100%"></span></span><b>MAX</b></li>
+              <li class="stat"><span>陪伴力</span><span class="stat-bar"><span style="--v:100%"></span></span><b>MAX</b></li>
+              <li class="stat"><span>食慾</span><span class="stat-bar is-over"><span style="--v:100%"></span></span><b>爆表</b></li>
+              <li class="stat"><span>福氣</span><span class="stat-bar"><span style="--v:100%"></span></span><b>滿滿</b></li>
+            </ul>
+          </div>
+
+          <span class="stamp" aria-hidden="true">福氣<br>認證</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 03 牠的故事 ===================== -->
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-no">02</p>
+          <h2 id="story-title">牠的故事</h2>
+          <p>從家裡的一份子，到我心中的幸運物。</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="chapter reveal reveal-left">
+            <span class="chapter-marker" aria-hidden="true"><svg class="icon"><use href="#paw"/></svg></span>
+            <article class="chapter-card" data-num="壹">
+              <div class="chapter-head">
+                <span class="chapter-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></svg>
+                </span>
+                <div>
+                  <p class="chapter-tag">第一章・由來</p>
+                  <h3>牠是家裡的一份子</h3>
+                </div>
+              </div>
+              <p class="chapter-text">說到幸運物，很多人會想到護身符或吊飾，但我的幸運物是一個會呼吸、會撒嬌的生命——<mark>我家養的白色貓咪</mark>。牠一身白白的毛，每天在家裡走來走去，是我們家真正的家人。</p>
+            </article>
+          </li>
+
+          <li class="chapter reveal reveal-right">
+            <span class="chapter-marker" aria-hidden="true"><svg class="icon"><use href="#paw"/></svg></span>
+            <article class="chapter-card" data-num="貳" style="--chip-bg:#FBF0D6;--chip-ink:#A87A1E">
+              <div class="chapter-head">
+                <span class="chapter-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.5l2.1 7.4 7.4 2.1-7.4 2.1L12 21.5l-2.1-7.4L2.5 12l7.4-2.1z"/></svg>
+                </span>
+                <div>
+                  <p class="chapter-tag">第二章・好運</p>
+                  <h3>有牠在，家就有好運</h3>
+                </div>
+              </div>
+              <p class="chapter-text">說不上是從什麼時候開始的，只覺得有牠在的家，總是特別順利、特別溫暖。<mark>牠的存在為家裡帶來好運，也帶來陪伴</mark>，讓每一天回到家都很安心。</p>
+            </article>
+          </li>
+
+          <li class="chapter reveal reveal-left">
+            <span class="chapter-marker" aria-hidden="true"><svg class="icon"><use href="#paw"/></svg></span>
+            <article class="chapter-card" data-num="參" style="--chip-bg:#E6EEF5;--chip-ink:#4F6E8A">
+              <div class="chapter-head">
+                <span class="chapter-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M2.5 12c3.5-5.5 10-5.5 14 0-4 5.5-10.5 5.5-14 0z"/><path d="M16.5 12l5-4v8z"/><circle cx="7" cy="11.2" r=".6"/></svg>
+                </span>
+                <div>
+                  <p class="chapter-tag">第三章・福氣</p>
+                  <h3>愛吃，所以圓滾滾</h3>
+                </div>
+              </div>
+              <p class="chapter-text"><mark>牠最喜歡吃東西，所以胖胖的。</mark>圓圓的臉、圓圓的肚子，看著牠的樣子，我總覺得牠很有福氣——就像把家裡的好運，全都吃進了肚子裡。</p>
+            </article>
+          </li>
+
+          <li class="chapter reveal reveal-right">
+            <span class="chapter-marker" aria-hidden="true"><svg class="icon"><use href="#paw"/></svg></span>
+            <article class="chapter-card" data-num="肆" style="--chip-bg:#FBE3E1;--chip-ink:#C24D3A">
+              <div class="chapter-head">
+                <span class="chapter-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 20.5C5 15.6 2.5 11.8 2.5 8.7 2.5 6.1 4.5 4 7 4c2 0 3.8 1.1 5 3 1.2-1.9 3-3 5-3 2.5 0 4.5 2.1 4.5 4.7 0 3.1-2.5 6.9-9.5 11.8z"/></svg>
+                </span>
+                <div>
+                  <p class="chapter-tag">第四章・心願</p>
+                  <h3>換我好好陪著牠</h3>
+                </div>
+              </div>
+              <p class="chapter-text">牠一直陪伴著我們，我也想好好陪伴牠。<mark>我希望可以一直陪在牠身邊</mark>，看牠吃飽飽、睡好好，健健康康的。</p>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== 04 象徵意涵 ===================== -->
+    <section class="section meaning" id="meaning" aria-labelledby="meaning-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-no">03</p>
+          <h2 id="meaning-title">象徵意涵</h2>
+          <p>同一隻白貓，藏著四種好運。點擊卡片，翻開背後的意義。</p>
+        </header>
+
+        <div class="cards">
+          <button class="flip-card reveal" type="button" aria-pressed="false" style="--delay:0s;--card-bg:#F4EEE6;--card-ink:#3A2E28">
+            <span class="flip-inner">
+              <span class="face face-front">
+                <span class="card-no">01</span>
+                <svg class="card-icon" viewBox="0 0 96 96" aria-hidden="true">
+                  <circle cx="48" cy="52" r="28" fill="#FFFFFF" stroke="#E2D5C5" stroke-width="3"/>
+                  <ellipse cx="39" cy="42" rx="8" ry="5" fill="#F4EEE6" transform="rotate(-30 39 42)"/>
+                  <use href="#sparkle" x="66" y="12" width="20" height="20" fill="#D4A03C"/>
+                  <use href="#sparkle" x="12" y="18" width="12" height="12" fill="#D4A03C"/>
+                </svg>
+                <span class="card-word">白色</span>
+                <span class="card-key">純淨・平安</span>
+                <span class="card-hint">點擊翻面 ↻</span>
+              </span>
+              <span class="face face-back">
+                <span class="card-key">白色｜純淨・平安</span>
+                <span class="card-text">白色象徵純淨與平安。牠一身雪白的毛，像是把家裡的煩惱都輕輕拂去，只要看見牠，心就會靜下來。</span>
+                <svg class="card-paw" aria-hidden="true"><use href="#paw"/></svg>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card reveal" type="button" aria-pressed="false" style="--delay:.1s;--card-bg:#F8E7BE;--card-ink:#3A2E28">
+            <span class="flip-inner">
+              <span class="face face-front">
+                <span class="card-no">02</span>
+                <svg class="card-icon" viewBox="0 0 96 96" aria-hidden="true">
+                  <circle cx="48" cy="50" r="32" fill="#E9BE5C" stroke="#A97D24" stroke-width="3"/>
+                  <circle cx="48" cy="50" r="24" fill="none" stroke="#A97D24" stroke-width="2" stroke-dasharray="3 5"/>
+                  <rect x="39" y="41" width="18" height="18" rx="2" fill="#F8E7BE" stroke="#A97D24" stroke-width="3"/>
+                  <ellipse cx="36" cy="32" rx="7" ry="3.5" fill="#FFF3CF" opacity=".8" transform="rotate(-35 36 32)"/>
+                </svg>
+                <span class="card-word">圓滾滾</span>
+                <span class="card-key">福氣・富足</span>
+                <span class="card-hint">點擊翻面 ↻</span>
+              </span>
+              <span class="face face-back">
+                <span class="card-key">圓滾滾｜福氣・富足</span>
+                <span class="card-text">在華人的觀念裡，圓圓胖胖代表有福氣。牠愛吃、吃得圓滾滾，正象徵家裡衣食無缺、日子過得安穩又富足。</span>
+                <svg class="card-paw" aria-hidden="true"><use href="#paw"/></svg>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card reveal" type="button" aria-pressed="false" style="--delay:.2s;--card-bg:#F9DAD6;--card-ink:#3A2E28">
+            <span class="flip-inner">
+              <span class="face face-front">
+                <span class="card-no">03</span>
+                <svg class="card-icon" viewBox="0 0 96 96" aria-hidden="true">
+                  <use href="#heart" x="14" y="20" width="56" height="56" fill="#F08A8A"/>
+                  <use href="#heart" x="46" y="14" width="36" height="36" fill="#FFFFFF" stroke="#E7A3A0" stroke-width="2"/>
+                </svg>
+                <span class="card-word">陪伴</span>
+                <span class="card-key">守護・溫暖</span>
+                <span class="card-hint">點擊翻面 ↻</span>
+              </span>
+              <span class="face face-back">
+                <span class="card-key">陪伴｜守護・溫暖</span>
+                <span class="card-text">好運不一定是中大獎，而是有誰一直待在身邊。牠的陪伴讓家不冷清，這份溫暖，就是最珍貴的幸運。</span>
+                <svg class="card-paw" aria-hidden="true"><use href="#paw"/></svg>
+              </span>
+            </span>
+          </button>
+
+          <button class="flip-card reveal" type="button" aria-pressed="false" style="--delay:.3s;--card-bg:#C24D3A;--card-ink:#FFF4E6">
+            <span class="flip-inner">
+              <span class="face face-front">
+                <span class="card-no">04</span>
+                <svg class="card-icon" viewBox="0 0 96 96" aria-hidden="true">
+                  <use href="#paw" x="16" y="14" width="64" height="64" fill="#FFFFFF"/>
+                  <ellipse cx="48" cy="57" rx="8" ry="6" fill="#F6C3C0"/>
+                </svg>
+                <span class="card-word">貓咪</span>
+                <span class="card-key">招福・好運</span>
+                <span class="card-hint">點擊翻面 ↻</span>
+              </span>
+              <span class="face face-back">
+                <span class="card-key">貓咪｜招福・好運</span>
+                <span class="card-text">在東方文化中，貓常被視為招來福氣的吉祥動物，就像舉起手的招財貓。家裡這隻白貓，就是我們家專屬的招福貓。</span>
+                <svg class="card-paw" aria-hidden="true"><use href="#paw"/></svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 05 餵食時間 ===================== -->
+    <section class="section feed" id="feed" aria-labelledby="feed-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-no">04</p>
+          <h2 id="feed-title">餵食時間</h2>
+          <p>牠最喜歡吃了！選一樣點心餵牠，吃飽飽就能抽一張「白貓福籤」。</p>
+        </header>
+
+        <div class="feed-wrap reveal">
+          <div class="feed-stage" id="feedStage">
+            <p class="feed-bubble" id="feedBubble" aria-hidden="true"></p>
+            <div class="feed-cat cat-host" id="feedCat" aria-hidden="true"></div>
+            <svg class="bowl" viewBox="0 0 140 84" aria-hidden="true">
+              <ellipse cx="70" cy="78" rx="60" ry="6" fill="rgba(89,64,44,.16)"/>
+              <path d="M8 28h124c-4 30-26 46-62 46S12 58 8 28z" fill="#C24D3A"/>
+              <ellipse cx="70" cy="28" rx="62" ry="12" fill="#A53E2E"/>
+              <ellipse cx="70" cy="30" rx="52" ry="8" fill="#E9C48F"/>
+              <circle cx="52" cy="28" r="4" fill="#D6A86A"/><circle cx="66" cy="31" r="4" fill="#CF9F5E"/><circle cx="82" cy="27" r="4" fill="#D6A86A"/><circle cx="92" cy="31" r="3.5" fill="#CF9F5E"/>
+              <text x="70" y="61" text-anchor="middle" font-size="22" fill="#FFF1DD" font-family="LXGW WenKai TC, serif" font-weight="700">福</text>
+            </svg>
+          </div>
+
+          <div class="feed-panel">
+            <div>
+              <p class="panel-label">① 選一樣點心</p>
+              <div class="food-list" id="foodList">
+                <button class="food" type="button" data-value="20" data-msg="喀滋喀滋～小魚乾好香！">
+                  <svg class="food-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <path d="M7 32c8-13 28-15 39 0-11 15-31 13-39 0z" fill="#A9BFD3" stroke="#5E7A93" stroke-width="2.5" stroke-linejoin="round"/>
+                    <path d="M46 32l12-10-2 10 2 10z" fill="#A9BFD3" stroke="#5E7A93" stroke-width="2.5" stroke-linejoin="round"/>
+                    <circle cx="17" cy="30" r="2.6" fill="#2F2622"/>
+                    <path d="M26 25q4 7 0 14M33 24q4 8 0 16" fill="none" stroke="#5E7A93" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span class="food-name">小魚乾</span>
+                  <span class="food-value">飽足 +20</span>
+                </button>
+                <button class="food" type="button" data-value="35" data-msg="是罐罐！最喜歡罐罐了！">
+                  <svg class="food-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="12" y="20" width="40" height="32" rx="6" fill="#E7B65A" stroke="#9C7426" stroke-width="2.5"/>
+                    <rect x="13.3" y="30" width="37.4" height="13" fill="#C24D3A"/>
+                    <path d="M21 36.5c3-4 9-4 12 0-3 4-9 4-12 0zM33 36.5l5-3.5v7z" fill="#FFF4E6"/>
+                    <ellipse cx="32" cy="20" rx="20" ry="6" fill="#E3E7EB" stroke="#8D98A3" stroke-width="2.5"/>
+                    <ellipse cx="32" cy="20" rx="13" ry="3.4" fill="none" stroke="#B5BEC7" stroke-width="2"/>
+                  </svg>
+                  <span class="food-name">罐罐</span>
+                  <span class="food-value">飽足 +35</span>
+                </button>
+                <button class="food" type="button" data-value="25" data-msg="雞肉條咬咬咬……好好吃！">
+                  <svg class="food-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <g transform="rotate(-35 32 32)">
+                      <rect x="9" y="24" width="46" height="16" rx="8" fill="#D9955B" stroke="#8F5A2C" stroke-width="2.5"/>
+                      <path d="M20 27v10M28 27v10M36 27v10M44 27v10" stroke="#B87339" stroke-width="2" stroke-linecap="round"/>
+                    </g>
+                  </svg>
+                  <span class="food-name">雞肉條</span>
+                  <span class="food-value">飽足 +25</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="meter">
+              <div class="meter-head"><span>② 飽足度</span><span id="fullText">0%</span></div>
+              <div class="meter-track" id="fullMeter" role="progressbar" aria-label="飽足度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span class="meter-fill"></span>
+              </div>
+              <p class="feed-status" id="feedStatus" aria-live="polite">牠正盯著你看……肚子好像有點餓了。</p>
+            </div>
+
+            <div>
+              <p class="panel-label">③ 吃飽飽，抽福籤</p>
+              <div class="omikuji" id="omikuji">
+                <div class="omikuji-inner">
+                  <div class="omikuji-face omikuji-front">
+                    <span class="omikuji-seal">籤</span>
+                    <div>
+                      <p class="omikuji-title">白貓福籤</p>
+                      <p class="omikuji-hint" id="omikujiHint">吃飽飽才能抽籤喔</p>
+                    </div>
+                  </div>
+                  <div class="omikuji-face omikuji-back" aria-live="polite">
+                    <span class="omikuji-level" id="fortuneLevel">大吉</span>
+                    <div>
+                      <p class="omikuji-no" id="fortuneNo">白貓福籤・第 1 號</p>
+                      <p class="omikuji-text" id="fortuneText"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="feed-actions">
+                <button class="btn btn-primary" id="drawBtn" type="button" disabled>抽福籤</button>
+                <button class="btn btn-ghost" id="resetBtn" type="button">重新餵一輪</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 06 心願 ===================== -->
+    <section class="section wish" id="wish" aria-labelledby="wish-title">
+      <div class="wish-sky" id="wishSky" aria-hidden="true">
+        <span class="moon"></span>
+      </div>
+
+      <div class="container wish-inner">
+        <button class="wish-cat reveal" id="sleepCat" type="button" aria-label="輕輕摸摸睡著的白貓">
+          <span class="wish-glow" aria-hidden="true"></span>
+          <svg class="sleep-cat" viewBox="0 0 400 260" aria-hidden="true" focusable="false">
+            <ellipse class="cat-shadow" cx="205" cy="240" rx="150" ry="11"/>
+            <g class="sleep-breathe">
+              <path class="fur" d="M72 200C62 132 142 100 222 102C302 104 352 140 346 196C343 230 300 238 210 238C122 238 76 232 72 200Z"/>
+              <ellipse class="fur" cx="118" cy="228" rx="26" ry="12"/>
+            </g>
+            <path class="tail-outline" d="M332 202C364 228 300 242 232 238"/>
+            <path class="tail-fill" d="M332 202C364 228 300 242 232 238"/>
+            <g class="sleep-head">
+              <g class="ear ear-l">
+                <path class="fur" d="M66 138Q58 86 78 76Q86 72 94 78L120 104Z"/>
+                <path class="ear-inner" d="M76 128Q72 96 82 88Q86 86 90 90L108 106Z"/>
+              </g>
+              <g class="ear ear-r">
+                <path class="fur" d="M194 138Q202 86 182 76Q174 72 166 78L140 104Z"/>
+                <path class="ear-inner" d="M184 128Q188 96 178 88Q174 86 170 90L152 106Z"/>
+              </g>
+              <path class="fur" d="M130 100C178 100 204 128 204 164C204 200 172 222 130 222C88 222 56 200 56 164C56 128 82 100 130 100Z"/>
+              <ellipse class="blush" cx="88" cy="186" rx="13" ry="7"/>
+              <ellipse class="blush" cx="172" cy="186" rx="13" ry="7"/>
+              <path class="sleep-eye" d="M92 163Q102 172 112 163M148 163Q158 172 168 163"/>
+              <path class="nose" d="M124 177Q130 173 136 177Q133 183 130 184Q127 183 124 177Z"/>
+              <path class="mouth" d="M120 190Q125 195 130 190Q135 195 140 190"/>
+              <path class="whiskers" d="M84 180L46 174M84 189L44 192M176 180L214 174M176 189L216 192"/>
+            </g>
+            <g class="zzz">
+              <text x="214" y="96">z</text>
+              <text x="240" y="70">z</text>
+              <text x="268" y="42">Z</text>
+            </g>
+          </svg>
+        </button>
+
+        <div class="wish-text reveal" style="--delay:.15s">
+          <p class="section-no">05</p>
+          <h2 class="wish-title" id="wish-title">「我希望，<br>可以一直陪伴著牠。」</h2>
+          <p class="wish-lead">牠用陪伴，為我們家帶來好運；而我想用每一天的陪伴回應牠——看牠吃飽飽、睡好好，一直健健康康地待在身邊。</p>
+          <button class="btn btn-light" id="hugBtn" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#heart"/></svg>
+            給牠一個擁抱
+          </button>
+          <p class="hug-message" id="hugMessage" aria-live="polite">輕輕按一下，送牠一個擁抱。</p>
+          <p class="hug-count">已經送出 <strong id="hugCount">0</strong> 個擁抱</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-seal" aria-hidden="true">福</span> 福氣白貓・我的幸運物</p>
+      <p>514170260 蔡杰紘｜多媒體網頁課程・第三週作業</p>
+    </div>
+  </footer>
+
+  <!-- 動畫特效圖層（愛心、肉球、彩紙） -->
+  <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
